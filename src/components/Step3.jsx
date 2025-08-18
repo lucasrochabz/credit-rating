@@ -18,14 +18,16 @@ export const Step3 = () => {
       <ErrorMessage name="tempoEmprego" component="div" className="error" />
 
       <div>
-        <label>
-          <Field type="radio" name="tipoEmprego" value="CLT" />
-          CLT
-        </label>
-        <label>
-          <Field type="radio" name="tipoEmprego" value="Autônomo" />
-          Autônomo
-        </label>
+        <div className="radio-group">
+          <label>
+            <Field type="radio" name="tipoEmprego" value="CLT" />
+            CLT
+          </label>
+          <label>
+            <Field type="radio" name="tipoEmprego" value="Autônomo" />
+            Autônomo
+          </label>
+        </div>
         <ErrorMessage name="tipoEmprego" component="div" className="error" />
       </div>
     </>

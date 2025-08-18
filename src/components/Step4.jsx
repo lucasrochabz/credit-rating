@@ -22,18 +22,20 @@ export const Step4 = () => {
       <ErrorMessage name="finalidade" component="div" className="error" />
 
       <div>
-        <label>
-          <Field type="radio" name="score" value="baixo" />
-          Score baixo
-        </label>
-        <label>
-          <Field type="radio" name="score" value="medio" />
-          Score médio
-        </label>
-        <label>
-          <Field type="radio" name="score" value="alto" />
-          Score alto
-        </label>
+        <div className="radio-group">
+          <label>
+            <Field type="radio" name="score" value="baixo" />
+            Score baixo
+          </label>
+          <label>
+            <Field type="radio" name="score" value="medio" />
+            Score médio
+          </label>
+          <label>
+            <Field type="radio" name="score" value="alto" />
+            Score alto
+          </label>
+        </div>
         <ErrorMessage name="score" component="div" className="error" />
       </div>
     </>

@@ -62,7 +62,7 @@ export const App = () => {
       <h2>Análise de Crédito</h2>
       <ProgressBar currentStep={step} totalSteps={steps.length} />
 
-      <h2>{steps[step].label}</h2>
+      <h2 className="title">{steps[step].label}</h2>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchemas[step]}

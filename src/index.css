@@ -4,44 +4,48 @@
   box-sizing: border-box;
 }
 
+:root {
+  --bg-color: #f5f5f5;
+  --green-color: #4caf50;
+  --gray-color: #cccccc;
+  --red-color: #ff0000;
+  --white-color: #ffffff;
+}
+
 body {
+  background: var(--bg-color);
   font-family: Arial, sans-serif;
-  background: #f5f5f5;
   padding: 2rem;
 }
 
 .container {
-  background: white;
-  padding: 2rem;
+  background: var(--white-color);
   max-width: 600px;
-  margin: auto;
+  padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
 }
 
 input, select {
-  width: 100%;
-  margin-bottom: 10px;
-  padding: 10px;
-}
-
-button {
-  margin-top: 10px;
-  padding: 10px 20px;
-  background: #4caf50;
-  color: white;
-  border: none;
+  border: 2px solid var(--gray-color);
   border-radius: 5px;
-  cursor: pointer;
+  padding: 10px;
+  margin-top: 1rem;
 }
 
-button:disabled {
-  cursor: wait;
-  background-color: #ccc;
+.radio-group {
+  display: flex;
+  gap: 1rem;
 }
 
 .error {
-  color: red;
+  color: var(--red-color);
   font-size: 0.85rem;
 }
 
@@ -50,12 +54,38 @@ button:disabled {
   height: 8px;
   width: 100%;
   border-radius: 10px;
-  margin-bottom: 20px;
   overflow: hidden;
+  margin-bottom: 20px;
 }
 
 .progress {
+  background: var(--green-color);
   height: 100%;
-  background: #4caf50;
   transition: width 0.3s;
+}
+
+button {
+  background: var(--green-color);
+  color: var(--white-color);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  margin-top: 2rem;
+}
+
+button:disabled {
+  background-color: var(--gray-color);
+  cursor: wait;
+}
+
+button[type='button'] {
+  background-color: transparent;
+  border: 1px solid var(--green-color);
+  color: var(--green-color);
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
 }
