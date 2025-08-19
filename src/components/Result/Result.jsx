@@ -1,5 +1,6 @@
 import approved from '../../../public/approved.svg';
 import failed from '../../../public/failed.svg';
+import './Result.css';
 
 export const Result = ({ isApproved }) => {
   const content = isApproved
@@ -19,7 +20,7 @@ export const Result = ({ isApproved }) => {
       };
 
   return (
-    <div>
+    <div className={`result ${isApproved ? 'approved' : 'failed'}`}>
       <img src={content.img} alt={content.alt} />
       <h2>{content.title}</h2>
       <p>{content.message}</p>

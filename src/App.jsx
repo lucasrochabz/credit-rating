@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { MultiStepForm } from './components/MultiStepForm/MultiStepForm.jsx';
-import { Result } from './components/Result/Result.jsx';
+import { MultiStepForm } from './components/MultiStepForm';
+import { Result } from './components/Result';
 
 export const App = () => {
   const [formSent, setFormSent] = useState(false);
@@ -20,7 +20,7 @@ export const App = () => {
         <Result isApproved={isApproved} />
       ) : (
         <>
-          <h2>Análise de Crédito</h2>
+          <h2>Análise de Risco de Crédito</h2>
           <MultiStepForm onFinish={handleFinish} />
         </>
       )}

@@ -1,0 +1,30 @@
+.result {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.result.approved h2 {
+  color: var(--green-color);
+}
+
+.result.approved a {
+  background-color: var(--green-color);
+}
+
+.result.failed h2 {
+  color: var(--red-color);
+}
+
+.result.failed a {
+  background-color: var(--red-color);
+}
+
+.result a {
+  color: var(--white-color);
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 5px;
+}
