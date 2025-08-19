@@ -1,5 +1,5 @@
-import approved from '../../public/aprovado.svg';
-import failed from '../../public/reprovado.svg';
+import approved from '../../../public/approved.svg';
+import failed from '../../../public/failed.svg';
 
 export const Result = ({ isApproved }) => {
   const content = isApproved

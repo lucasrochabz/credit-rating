@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { Formik, Form } from 'formik';
-import { validationSchemas } from '../schemas/validationSchemas.js';
-import { ProgressBar } from '../components/ProgressBar.jsx';
-import { Step1 } from '../components/Step1.jsx';
-import { Step2 } from '../components/Step2.jsx';
-import { Step3 } from '../components/Step3.jsx';
-import { Step4 } from '../components/Step4.jsx';
+import { validationSchemas } from '../../schemas/validationSchemas.js';
+import { ProgressBar } from '../ProgressBar/ProgressBar.jsx';
+import { Step1 } from './Steps/Step1.jsx';
+import { Step2 } from './Steps/Step2.jsx';
+import { Step3 } from './Steps/Step3.jsx';
+import { Step4 } from './Steps/Step4.jsx';
 
 const initialValues = {
   nome: '',

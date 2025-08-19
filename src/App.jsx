@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { MultiStepForm } from './components/MultiStepForm.jsx';
-import { Result } from './components/Result.jsx';
+import { MultiStepForm } from './components/MultiStepForm/MultiStepForm.jsx';
+import { Result } from './components/Result/Result.jsx';
 
 export const App = () => {
   const [formSent, setFormSent] = useState(false);
