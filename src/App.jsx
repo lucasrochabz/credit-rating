@@ -2,11 +2,13 @@ import { useState } from 'react';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 
+import { ProgressBar } from './components/ProgressBar.jsx';
 import { Step1 } from './components/Step1.jsx';
 import { Step2 } from './components/Step2.jsx';
 import { Step3 } from './components/Step3.jsx';
 import { Step4 } from './components/Step4.jsx';
-import { ProgressBar } from './components/ProgressBar.jsx';
+import { Aprovado } from './components/Aprovado.jsx';
+import { Reprovado } from './components/Reprovado.jsx';
 import { validationSchemas } from './schemas/validationSchemas.js';
 
 const initialValues = {
@@ -40,6 +42,7 @@ const steps = [
 
 export const App = () => {
   const [step, setStep] = useState(0);
+  const [formSent, setFormSent] = useState(false);
 
   const isLastStep = step === steps.length - 1;
   const CurrentStep = steps[step].component;
@@ -50,6 +53,7 @@ export const App = () => {
 
       alert('Formulário enviado com sucesso!');
       console.log(values);
+      setFormSent(true);
     } else {
       setStep(step + 1);
     }
@@ -59,32 +63,40 @@ export const App = () => {
 
   return (
     <div className="container">
-      <h2>Análise de Crédito</h2>
-      <ProgressBar currentStep={step} totalSteps={steps.length} />
+      {formSent ? (
+        // <Aprovado />
+        <Reprovado />
+      ) : (
+        <>
+          <h2>Análise de Crédito</h2>
 
-      <h2 className="title">{steps[step].label}</h2>
-      <Formik
-        initialValues={initialValues}
-        validationSchema={validationSchemas[step]}
-        onSubmit={handleSubmit}
-      >
-        {({ isSubmitting }) => (
-          <Form>
-            <CurrentStep />
+          <ProgressBar currentStep={step} totalSteps={steps.length} />
 
-            <div className="buttons">
-              {step > 0 && (
-                <button type="button" onClick={() => setStep(step - 1)}>
-                  Voltar
-                </button>
-              )}
-              <button type="submit" disabled={isSubmitting}>
-                {isLastStep ? 'Finalizar' : 'Próximo'}
-              </button>
-            </div>
-          </Form>
-        )}
-      </Formik>
+          <h2 className="title">{steps[step].label}</h2>
+          <Formik
+            initialValues={initialValues}
+            validationSchema={validationSchemas[step]}
+            onSubmit={handleSubmit}
+          >
+            {({ isSubmitting }) => (
+              <Form>
+                <CurrentStep />
+
+                <div className="buttons">
+                  {step > 0 && (
+                    <button type="button" onClick={() => setStep(step - 1)}>
+                      Voltar
+                    </button>
+                  )}
+                  <button type="submit" disabled={isSubmitting}>
+                    {isLastStep ? 'Finalizar' : 'Próximo'}
+                  </button>
+                </div>
+              </Form>
+            )}
+          </Formik>
+        </>
+      )}
     </div>
   );
 };
