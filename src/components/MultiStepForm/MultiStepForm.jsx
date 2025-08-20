@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Formik, Form } from 'formik';
 import { validationSchemas } from '../../schemas/validationSchemas.js';
 import { ProgressBar } from '../ProgressBar';
-import { Step1, Step2, Step3, Step4 } from './Steps';
+import { Step1, Step2, Step3, Step4, Step5 } from './Steps';
 
 const initialValues = {
   nome: '',
@@ -27,10 +27,11 @@ const initialValues = {
 };
 
 const steps = [
-  { component: Step1, label: 'Informações Pessoais' },
-  { component: Step2, label: 'Contato' },
-  { component: Step3, label: 'Renda' },
-  { component: Step4, label: 'Solicitação' },
+  { component: Step1, label: 'Dados Pessoais' },
+  { component: Step2, label: 'Situação Profissional e Patrimonial' },
+  { component: Step3, label: 'Finanças Atuais' },
+  { component: Step4, label: 'Detalhes do Empréstimo' },
+  { component: Step5, label: 'Garantias e Fiadores' },
 ];
 
 export const MultiStepForm = ({ onFinish }) => {

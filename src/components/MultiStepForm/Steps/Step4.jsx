@@ -3,41 +3,117 @@ import { Field, ErrorMessage } from 'formik';
 export const Step4 = () => {
   return (
     <>
+      <label htmlFor="duracao_emprestimo">
+        Por quantos meses você deseja pagar o empréstimo?
+      </label>
       <Field
-        name="valorSolicitado"
         type="number"
-        placeholder="Valor solicitado (R$)"
+        name="duracao_emprestimo"
+        id="duracao_emprestimo"
+        placeholder="Ex: 24"
       />
-      <ErrorMessage name="valorSolicitado" component="div" className="error" />
+      <ErrorMessage
+        name="duracao_emprestimo"
+        component="div"
+        className="error"
+      />
 
-      <Field name="prazo" as="select">
-        <option value="">Prazo de pagamento</option>
-        <option value="12">12 meses</option>
-        <option value="24">24 meses</option>
-        <option value="36">36 meses</option>
+      <label htmlFor="proposito_credito">
+        Para qual finalidade você quer o crédito?
+      </label>
+      <Field name="proposito_credito" as="select">
+        <option value="">Selecione uma opção</option>
+        <option value="A40">Carro (novo)</option>
+        <option value="A41">Carro (usado)</option>
+        <option value="A42">Mobilia/equipamentos</option>
+        <option value="A43">Radio/Televisão</option>
+        <option value="A44">Materiais Domésticos</option>
+        <option value="A45">Reparos/Reformas</option>
+        <option value="A46">Educação</option>
+        <option value="A47">Férias</option>
+        <option value="A48">Requalificação</option>
+        <option value="A49">Negócios</option>
+        <option value="A50">Outros</option>
       </Field>
-      <ErrorMessage name="prazo" component="div" className="error" />
+      <ErrorMessage
+        name="proposito_credito"
+        component="div"
+        className="error"
+      />
 
-      <Field name="finalidade" placeholder="Finalidade do crédito" />
-      <ErrorMessage name="finalidade" component="div" className="error" />
+      <label htmlFor="historico_de_credito">
+        Para qual finalidade você quer o crédito?
+      </label>
+      <Field name="historico_de_credito" as="select">
+        <option value="">Selecione uma opção</option>
+        <option value="A30">Sem crédito/Créditos pagos totalmente</option>
+        <option value="A31">Créditos pagos totalmente nesse banco</option>
+        <option value="A32">Crédito existente pago em dia</option>
+        <option value="A33">Atrasos em pagamentos passados</option>
+        <option value="A34">Conta crítica/Créditos em outros bancos</option>
+      </Field>
+      <ErrorMessage
+        name="historico_de_credito"
+        component="div"
+        className="error"
+      />
 
       <div>
-        <div className="radio-group">
+        <fieldset className="radio-group">
+          <legend>Você tem outros parcelamentos ativos?</legend>
+
           <label>
-            <Field type="radio" name="score" value="baixo" />
-            Score baixo
+            <Field
+              type="radio"
+              name="outros_parcelamentos"
+              id="outros_parcelamentos"
+              value="A141"
+            />
+            Bancário
           </label>
+
           <label>
-            <Field type="radio" name="score" value="medio" />
-            Score médio
+            <Field
+              type="radio"
+              name="outros_parcelamentos"
+              id="outros_parcelamentos"
+              value="A142"
+            />
+            Comércio
           </label>
+
           <label>
-            <Field type="radio" name="score" value="alto" />
-            Score alto
+            <Field
+              type="radio"
+              name="outros_parcelamentos"
+              id="outros_parcelamentos"
+              value="A143"
+            />
+            Nenhum
           </label>
-        </div>
-        <ErrorMessage name="score" component="div" className="error" />
+        </fieldset>
+
+        <ErrorMessage
+          name="outros_parcelamentos"
+          component="div"
+          className="error"
+        />
       </div>
+
+      <label htmlFor="creditos_existentes">
+        Quantos créditos você tem atualmente?
+      </label>
+      <Field
+        type="number"
+        name="creditos_existentes"
+        id="creditos_existentes"
+        placeholder="Ex: 1"
+      />
+      <ErrorMessage
+        name="creditos_existentes"
+        component="div"
+        className="error"
+      />
     </>
   );
 };
