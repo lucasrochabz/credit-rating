@@ -10,7 +10,7 @@ export const Step1 = () => {
       <label htmlFor="genero_estado_civil">
         Qual o seu gênero e estado civil?
       </label>
-      <Field name="genero_estado_civil" as="select">
+      <Field name="genero_estado_civil" id="genero_estado_civil" as="select">
         <option value="">Gênero - Estado civil</option>
         <option value="A91">Homem - Divorciado</option>
         <option value="A92">Mulher - Casada/Divorciada</option>
@@ -39,8 +39,13 @@ export const Step1 = () => {
         className="error"
       />
 
-      <label htmlFor="telefone">Qual o seu número de telefone?</label>
-      <Field name="telefone" id="telefone" placeholder="(85) 99999-9999" />
+      <label htmlFor="telefone">Qual o seu número de telefone? *</label>
+      <Field
+        type="number"
+        name="telefone"
+        id="telefone"
+        placeholder="85999999999"
+      />
       <ErrorMessage name="telefone" component="div" className="error" />
 
       <div>
@@ -51,7 +56,7 @@ export const Step1 = () => {
             <Field
               type="radio"
               name="trabalhador_estrangeiro"
-              id="trabalhador_estrangeiro"
+              id="trabalhador_estrangeiro_sim"
               value="sim"
             />
             Sim
@@ -61,7 +66,7 @@ export const Step1 = () => {
             <Field
               type="radio"
               name="trabalhador_estrangeiro"
-              id="trabalhador_estrangeiro"
+              id="trabalhador_estrangeiro_nao"
               value="nao"
             />
             Não

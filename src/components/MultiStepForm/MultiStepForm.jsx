@@ -5,13 +5,14 @@ import { ProgressBar } from '../ProgressBar';
 import { Step1, Step2, Step3, Step4, Step5 } from './Steps';
 
 const initialValues = {
-  nome: '',
-  cpf: '',
-  nascimento: '',
-  estadoCivil: '',
+  idade: '',
+  genero_estado_civil: '',
+  pessoas_responsaveis: '',
+  telefone: '',
+  trabalhador_estrangeiro: '',
 
   email: '',
-  telefone: '',
+  teste: '',
   endereco: '',
   estado: '',
 

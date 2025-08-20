@@ -2,11 +2,23 @@ import * as Yup from 'yup';
 
 export const validationSchemas = [
   Yup.object({
-    nome: Yup.string().required('O nome é obrigatório.'),
-    cpf: Yup.string().required('O CPF é obrigatório.'),
-    nascimento: Yup.string().required('A data de nascimento é obrigatória.'),
-    estadoCivil: Yup.string().required('O estado civil é obrigatório.'),
+    idade: Yup.number()
+      .required('A idade é obrigatória.')
+      .integer('A idade dever ser um número inteiro')
+      .positive('A idade deve ser um número positivo')
+      .min(18, 'A idade mínima é 18 anos'),
+    genero_estado_civil: Yup.string().required(
+      'O genero e o estado civil são obrigatórios.',
+    ),
+    pessoas_responsaveis: Yup.number().required(
+      'O campo de pessoas responsaveis é obrigatório.',
+    ),
+    telefone: Yup.number().required('O telefone é obrigatório.'),
+    trabalhador_estrangeiro: Yup.string().required(
+      'O campo de trabalhador estrangeiro é obrigatório.',
+    ),
   }),
+
   Yup.object({
     email: Yup.string()
       .email('Informe um email válido.')
@@ -26,5 +38,10 @@ export const validationSchemas = [
     prazo: Yup.string().required('O prazo é obrigatório.'),
     finalidade: Yup.string().required('A finalidade é obrigatória.'),
     score: Yup.string().required('O score é obrigatório.'),
+  }),
+  Yup.object({
+    parceiros_fiadores: Yup.number().required(
+      'O valor solicitado é obrigatório.',
+    ),
   }),
 ];
