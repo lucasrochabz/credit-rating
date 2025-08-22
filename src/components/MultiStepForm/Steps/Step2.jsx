@@ -3,19 +3,19 @@ import { Field, ErrorMessage } from 'formik';
 export const Step2 = () => {
   const empregoOptions = [
     { value: '', label: 'Selecione' },
-    { value: 'A171', label: 'Desempregado sem instrução' },
-    { value: 'A172', label: 'Empregado sem instrução' },
-    { value: 'A173', label: 'Empregado com instrução' },
-    { value: 'A174', label: 'Alto cargo/Autônomo' },
+    { value: '0', label: 'Desempregado sem instrução' },
+    { value: '1', label: 'Empregado sem instrução' },
+    { value: '2', label: 'Empregado com instrução' },
+    { value: '3', label: 'Alto cargo/Autônomo' },
   ];
 
   const tempoTrabalhoAtualOptions = [
     { value: '', label: 'Selecione' },
-    { value: 'A71', label: 'Desempregado' },
-    { value: 'A72', label: '<1 ano' },
-    { value: 'A73', label: '1 ano - 4 anos' },
-    { value: 'A74', label: '4 anos - 7 anos' },
-    { value: 'A75', label: '>7 anos' },
+    { value: '0', label: 'Desempregado' },
+    { value: '1', label: '<1 ano' },
+    { value: '2', label: '1 ano - 4 anos' },
+    { value: '3', label: '4 anos - 7 anos' },
+    { value: '4', label: '>7 anos' },
   ];
 
   const patrimonioOptions = [

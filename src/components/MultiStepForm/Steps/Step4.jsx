@@ -33,17 +33,17 @@ export const Step4 = () => {
 
   return (
     <>
-      <label htmlFor="duracao_emprestimo">
+      <label htmlFor="duracao_emprestimo(meses)">
         Por quantos meses você deseja pagar o empréstimo?
       </label>
       <Field
         type="number"
-        name="duracao_emprestimo"
-        id="duracao_emprestimo"
+        name="duracao_emprestimo(meses)"
+        id="duracao_emprestimo(meses)"
         placeholder="Ex: 24"
       />
       <ErrorMessage
-        name="duracao_emprestimo"
+        name="duracao_emprestimo(meses)"
         component="div"
         className="error"
       />

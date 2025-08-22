@@ -20,9 +20,9 @@ const initialValues = {
   situacao_conta_corrente: '',
   poupanca_titulos: '',
   valor_credito: '',
-  parcelamento_sobre_renda: '',
+  'parcelamento_sobre_renda(%)': '',
 
-  duracao_emprestimo: '',
+  'duracao_emprestimo(meses)': '',
   proposito_credito: '',
   historico_de_credito: '',
   outros_parcelamentos: '',
@@ -47,8 +47,9 @@ export const MultiStepForm = ({ onFinish }) => {
 
   const handleSubmit = async (values, actions) => {
     if (isLastStep) {
+      console.log(values);
       try {
-        const { url, options } = POST_DATA({ values });
+        const { url, options } = POST_DATA(values);
         const response = await fetch(url, options);
         const results = await response.json();
 
@@ -56,7 +57,7 @@ export const MultiStepForm = ({ onFinish }) => {
           throw new Error(results.message || 'Erro ao enviar os dados.');
         }
         console.log(results);
-        onFinish(values);
+        onFinish(results);
       } catch (error) {
         console.error(error.message);
         alert(error.message);

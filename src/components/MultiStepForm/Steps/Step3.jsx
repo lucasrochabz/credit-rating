@@ -3,19 +3,19 @@ import { Field, ErrorMessage } from 'formik';
 export const Step3 = () => {
   const situacaoContaCorrenteOptions = [
     { value: '', label: 'Selecione' },
-    { value: 'A11', label: '<0DM' },
-    { value: 'A12', label: '0DM - 200DM' },
-    { value: 'A13', label: '0DM - 200DM' },
-    { value: 'A14', label: '>=1000DM' },
+    { value: '0', label: '<0DM' },
+    { value: '1', label: '0DM - 200DM' },
+    { value: '2', label: '0DM - 200DM' },
+    { value: '3', label: '>=1000DM' },
   ];
 
   const poupancaTitulosOptions = [
     { value: '', label: 'Selecione' },
-    { value: 'A61', label: '<100DM' },
-    { value: 'A62', label: '100DM - 500DM' },
-    { value: 'A63', label: '500DM - 1000DM' },
-    { value: 'A64', label: '>1000DM' },
-    { value: 'A65', label: 'Desconhecido/Nenhum' },
+    { value: '1', label: '<100DM' },
+    { value: '2', label: '100DM - 500DM' },
+    { value: '3', label: '500DM - 1000DM' },
+    { value: '4', label: '>1000DM' },
+    { value: '0', label: 'Desconhecido/Nenhum' },
   ];
 
   return (
@@ -59,17 +59,17 @@ export const Step3 = () => {
       />
       <ErrorMessage name="valor_credito" component="div" className="error" />
 
-      <label htmlFor="parcelamento_sobre_renda">
+      <label htmlFor="parcelamento_sobre_renda(%)">
         Qual percentual da sua renda será usado para pagar a parcela?
       </label>
       <Field
         type="number"
-        name="parcelamento_sobre_renda"
-        id="parcelamento_sobre_renda"
+        name="parcelamento_sobre_renda(%)"
+        id="parcelamento_sobre_renda(%)"
         placeholder="Ex: 25"
       />
       <ErrorMessage
-        name="parcelamento_sobre_renda"
+        name="parcelamento_sobre_renda(%)"
         component="div"
         className="error"
       />

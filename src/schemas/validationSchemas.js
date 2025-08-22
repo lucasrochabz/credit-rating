@@ -22,13 +22,10 @@ export const validationSchemas = [
   Yup.object({
     emprego: Yup.string()
       .required('O emprego é obrigatório.')
-      .oneOf(
-        ['A171', 'A172', 'A173', 'A174', 'A175'],
-        'Selecione uma opção válida',
-      ),
+      .oneOf(['0', '1', '2', '3'], 'Selecione uma opção válida'),
     tempo_trabalho_atual: Yup.string()
       .required('O tempo trabalho atual é obrigatório.')
-      .oneOf(['A71', 'A72', 'A73', 'A74', 'A75'], 'Selecione uma opção válida'),
+      .oneOf(['0', '1', '2', '3', '4'], 'Selecione uma opção válida'),
     patrimonio: Yup.string()
       .required('O patrimonio é obrigatório.')
       .oneOf(['A121', 'A122', 'A123', 'A124'], 'Selecione uma opção válida'),
@@ -44,22 +41,22 @@ export const validationSchemas = [
   Yup.object({
     situacao_conta_corrente: Yup.string()
       .required('A situacao da conta corrente é obrigatória.')
-      .oneOf(['A11', 'A12', 'A13', 'A14'], 'Selecione uma opção válida'),
+      .oneOf(['0', '1', '2', '3'], 'Selecione uma opção válida'),
     poupanca_titulos: Yup.string()
       .required('O valor de poupanca é obrigatório.')
-      .oneOf(['A61', 'A62', 'A63', 'A64', 'A65'], 'Selecione uma opção válida'),
+      .oneOf(['1', '2', '3', '4', '0'], 'Selecione uma opção válida'),
     valor_credito: Yup.number()
       .required('O valor do credito é obrigatório.')
       .integer('O valor do credito dever ser um número inteiro')
       .positive('O valor do credito deve ser um número positivo'),
-    parcelamento_sobre_renda: Yup.number()
+    'parcelamento_sobre_renda(%)': Yup.number()
       .required('O valor percentual sobre a renda é obrigatório.')
       .integer('O valor percentual sobre a renda dever ser um número inteiro')
       .positive('O valor percentual sobre a renda deve ser um número positivo'),
   }),
 
   Yup.object({
-    duracao_emprestimo: Yup.number()
+    'duracao_emprestimo(meses)': Yup.number()
       .required('A duracao do emprestimo é obrigatória.')
       .integer('A duracao do emprestimo dever ser um número inteiro')
       .positive('A duracao do emprestimo deve ser um número positivo'),
