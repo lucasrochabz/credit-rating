@@ -42,7 +42,7 @@ export const Step4 = () => {
       />
 
       <label htmlFor="historico_de_credito">
-        Para qual finalidade você quer o crédito?
+        Qual é o seu histórico de crédito?
       </label>
       <Field name="historico_de_credito" as="select">
         <option value="">Selecione uma opção</option>

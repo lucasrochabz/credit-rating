@@ -7,14 +7,14 @@ export const Result = ({ isApproved }) => {
     ? {
         img: approved,
         alt: 'Approved',
-        title: 'Crédito Aprovado!',
+        title: 'Adimplente',
         message:
           'Parabéns, seu crédito foi aprovado com sucesso. Aproveite essa nova oportunidade!',
       }
     : {
         img: failed,
         alt: 'Failed',
-        title: 'Crédito Reprovado!',
+        title: 'Inadimplente',
         message:
           'Lamentamos, mas seu crédito não foi aprovado. Você poderá tentar novamente em outra ocasião.',
       };

@@ -39,15 +39,6 @@ export const Step1 = () => {
         className="error"
       />
 
-      <label htmlFor="telefone">Qual o seu número de telefone? *</label>
-      <Field
-        type="number"
-        name="telefone"
-        id="telefone"
-        placeholder="85999999999"
-      />
-      <ErrorMessage name="telefone" component="div" className="error" />
-
       <div>
         <fieldset className="radio-group">
           <legend>Você é trabalhador estrangeiro?</legend>
@@ -57,7 +48,7 @@ export const Step1 = () => {
               type="radio"
               name="trabalhador_estrangeiro"
               id="trabalhador_estrangeiro_sim"
-              value="sim"
+              value="A201"
             />
             Sim
           </label>
@@ -67,7 +58,7 @@ export const Step1 = () => {
               type="radio"
               name="trabalhador_estrangeiro"
               id="trabalhador_estrangeiro_nao"
-              value="nao"
+              value="A202"
             />
             Não
           </label>

@@ -11,7 +11,7 @@ export const Step3 = () => {
         <option value="A11">{'<0DM'}</option>
         <option value="A12">0DM - 200DM</option>
         <option value="A13">{'>200DM'}</option>
-        <option value="A14">Sem checagem</option>
+        <option value="A14">{'>=1000DM'}</option>
       </Field>
       <ErrorMessage
         name="situacao_conta_corrente"

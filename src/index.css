@@ -11,6 +11,7 @@
   --gray-color: #cccccc;
   --red-color: #ff0000;
   --white-color: #ffffff;
+  --black-color: #000000;
 
   /* Fonte */
   --font-xs: 0.8rem;
@@ -55,11 +56,21 @@ input, select {
   border: 2px solid var(--gray-color);
   border-radius: 5px;
   padding: 10px;
-  /* margin-top: 1rem; */
+  font-size: 1rem;
 }
 
 label, fieldset {
   margin-top: 1rem;
+}
+
+fieldset {
+  padding: 10px;
+  border: 2px solid var(--gray-color);
+  border-radius: 5px;
+}
+
+legend {
+  color: var(--black-color);
 }
 
 .radio-group {

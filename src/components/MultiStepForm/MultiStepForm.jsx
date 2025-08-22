@@ -8,23 +8,25 @@ const initialValues = {
   idade: '',
   genero_estado_civil: '',
   pessoas_responsaveis: '',
-  telefone: '',
   trabalhador_estrangeiro: '',
 
-  email: '',
-  teste: '',
-  endereco: '',
-  estado: '',
+  emprego: '',
+  tempo_trabalho_atual: '',
+  tempo_residencia_atual: '',
+  posse_moradia: '',
 
-  profissao: '',
-  renda: '',
-  tempoEmprego: '',
-  tipoEmprego: '',
+  situacao_conta_corrente: '',
+  poupanca_titulos: '',
+  valor_credito: '',
+  parcelamento_sobre_renda: '',
 
-  valorSolicitado: '',
-  prazo: '',
-  finalidade: '',
-  score: '',
+  duracao_emprestimo: '',
+  proposito_credito: '',
+  historico_de_credito: '',
+  outros_parcelamentos: '',
+  creditos_existentes: '',
+
+  parceiros_fiadores: '',
 };
 
 const steps = [
@@ -74,7 +76,7 @@ export const MultiStepForm = ({ onFinish }) => {
               )}
 
               <button type="submit" disabled={isSubmitting}>
-                {isLastStep ? 'Finalizar' : 'Próximo'}
+                {isLastStep ? 'Prever' : 'Próximo'}
               </button>
             </div>
           </Form>
