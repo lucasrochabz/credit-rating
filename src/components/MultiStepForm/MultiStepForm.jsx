@@ -12,6 +12,7 @@ const initialValues = {
 
   emprego: '',
   tempo_trabalho_atual: '',
+  patrimonio: '',
   tempo_residencia_atual: '',
   posse_moradia: '',
 
@@ -61,7 +62,7 @@ export const MultiStepForm = ({ onFinish }) => {
 
       <Formik
         initialValues={initialValues}
-        // validationSchema={validationSchemas[step]}
+        validationSchema={validationSchemas[step]}
         onSubmit={handleSubmit}
       >
         {({ isSubmitting }) => (

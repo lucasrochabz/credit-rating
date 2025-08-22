@@ -1,17 +1,34 @@
 import { Field, ErrorMessage } from 'formik';
 
 export const Step3 = () => {
+  const situacaoContaCorrenteOptions = [
+    { value: '', label: 'Selecione' },
+    { value: 'A11', label: '<0DM' },
+    { value: 'A12', label: '0DM - 200DM' },
+    { value: 'A13', label: '0DM - 200DM' },
+    { value: 'A14', label: '>=1000DM' },
+  ];
+
+  const poupancaTitulosOptions = [
+    { value: '', label: 'Selecione' },
+    { value: 'A61', label: '<100DM' },
+    { value: 'A62', label: '100DM - 500DM' },
+    { value: 'A63', label: '500DM - 1000DM' },
+    { value: 'A64', label: '>1000DM' },
+    { value: 'A65', label: 'Desconhecido/Nenhum' },
+  ];
+
   return (
     <>
       <label htmlFor="situacao_conta_corrente">
         Como está sua conta corrente atualmente?
       </label>
       <Field name="situacao_conta_corrente" as="select">
-        <option value="">Selecione uma opção</option>
-        <option value="A11">{'<0DM'}</option>
-        <option value="A12">0DM - 200DM</option>
-        <option value="A13">{'>200DM'}</option>
-        <option value="A14">{'>=1000DM'}</option>
+        {situacaoContaCorrenteOptions.map((opt, index) => (
+          <option key={index} value={opt.value}>
+            {opt.label}
+          </option>
+        ))}
       </Field>
       <ErrorMessage
         name="situacao_conta_corrente"
@@ -23,12 +40,11 @@ export const Step3 = () => {
         Quanto você possui em poupança ou títulos?
       </label>
       <Field name="poupanca_titulos" as="select">
-        <option value="">Selecione uma opção</option>
-        <option value="A61">{'<100DM'}</option>
-        <option value="A62">100DM - 500DM</option>
-        <option value="A63">500DM - 1000DM</option>
-        <option value="A64">{'>1000DM'}</option>
-        <option value="A65">Desconhecido/Nenhum</option>
+        {poupancaTitulosOptions.map((opt, index) => (
+          <option key={index} value={opt.value}>
+            {opt.label}
+          </option>
+        ))}
       </Field>
       <ErrorMessage name="poupanca_titulos" component="div" className="error" />
 

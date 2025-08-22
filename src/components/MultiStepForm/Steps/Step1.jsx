@@ -1,6 +1,20 @@
 import { Field, ErrorMessage } from 'formik';
 
 export const Step1 = () => {
+  const generoEstadoCivilOptions = [
+    { value: '', label: 'Selecione' },
+    { value: 'A91', label: 'Homem - Divorciado' },
+    { value: 'A92', label: 'Mulher - Casada/Divorciada' },
+    { value: 'A93', label: 'Homem - Solteiro' },
+    { value: 'A94', label: 'Homem - Casado' },
+    { value: 'A95', label: 'Mulher - Solteira' },
+  ];
+
+  const trabalhadorEstrangeiroOptions = [
+    { value: 'A201', label: 'Sim' },
+    { value: 'A202', label: 'Não' },
+  ];
+
   return (
     <>
       <label htmlFor="idade">Qual a sua idade?</label>
@@ -11,12 +25,11 @@ export const Step1 = () => {
         Qual o seu gênero e estado civil?
       </label>
       <Field name="genero_estado_civil" id="genero_estado_civil" as="select">
-        <option value="">Gênero - Estado civil</option>
-        <option value="A91">Homem - Divorciado</option>
-        <option value="A92">Mulher - Casada/Divorciada</option>
-        <option value="A93">Homem - Solteiro</option>
-        <option value="A94">Homem - Casado</option>
-        <option value="A95">Mulher - Solteira</option>
+        {generoEstadoCivilOptions.map((opt, index) => (
+          <option key={index} value={opt.value}>
+            {opt.label}
+          </option>
+        ))}
       </Field>
       <ErrorMessage
         name="genero_estado_civil"
@@ -43,27 +56,17 @@ export const Step1 = () => {
         <fieldset className="radio-group">
           <legend>Você é trabalhador estrangeiro?</legend>
 
-          <label>
-            <Field
-              type="radio"
-              name="trabalhador_estrangeiro"
-              id="trabalhador_estrangeiro_sim"
-              value="A201"
-            />
-            Sim
-          </label>
-
-          <label>
-            <Field
-              type="radio"
-              name="trabalhador_estrangeiro"
-              id="trabalhador_estrangeiro_nao"
-              value="A202"
-            />
-            Não
-          </label>
+          {trabalhadorEstrangeiroOptions.map((opt, index) => (
+            <label key={index}>
+              <Field
+                type="radio"
+                name="trabalhador_estrangeiro"
+                value={opt.value}
+              />
+              {opt.label}
+            </label>
+          ))}
         </fieldset>
-
         <ErrorMessage
           name="trabalhador_estrangeiro"
           component="div"

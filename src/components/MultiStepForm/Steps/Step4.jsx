@@ -1,6 +1,36 @@
 import { Field, ErrorMessage } from 'formik';
 
 export const Step4 = () => {
+  const propositoCreditoOptions = [
+    { value: '', label: 'Selecione' },
+    { value: 'A40', label: 'Carro (novo)' },
+    { value: 'A41', label: 'Carro (usado)' },
+    { value: 'A42', label: 'Mobilia/equipamentos' },
+    { value: 'A43', label: 'Radio/Televisão' },
+    { value: 'A44', label: 'Materiais Domésticos' },
+    { value: 'A45', label: 'Reparos/Reformas' },
+    { value: 'A46', label: 'Educação' },
+    { value: 'A47', label: 'Férias' },
+    { value: 'A48', label: 'Requalificação' },
+    { value: 'A49', label: 'Negócios' },
+    { value: 'A50', label: 'Outros' },
+  ];
+
+  const historicoDeCreditoOptions = [
+    { value: '', label: 'Selecione' },
+    { value: 'A30', label: 'Sem crédito/Créditos pagos totalmente' },
+    { value: 'A31', label: 'Créditos pagos totalmente nesse banco' },
+    { value: 'A32', label: 'Crédito existente pago em dia' },
+    { value: 'A33', label: 'Atrasos em pagamentos passados' },
+    { value: 'A34', label: 'Conta crítica/Créditos em outros bancos' },
+  ];
+
+  const outrosParcelamentosOptions = [
+    { value: 'A141', label: 'Bancário' },
+    { value: 'A142', label: 'Comércio' },
+    { value: 'A143', label: 'Nenhum' },
+  ];
+
   return (
     <>
       <label htmlFor="duracao_emprestimo">
@@ -22,18 +52,11 @@ export const Step4 = () => {
         Para qual finalidade você quer o crédito?
       </label>
       <Field name="proposito_credito" as="select">
-        <option value="">Selecione uma opção</option>
-        <option value="A40">Carro (novo)</option>
-        <option value="A41">Carro (usado)</option>
-        <option value="A42">Mobilia/equipamentos</option>
-        <option value="A43">Radio/Televisão</option>
-        <option value="A44">Materiais Domésticos</option>
-        <option value="A45">Reparos/Reformas</option>
-        <option value="A46">Educação</option>
-        <option value="A47">Férias</option>
-        <option value="A48">Requalificação</option>
-        <option value="A49">Negócios</option>
-        <option value="A50">Outros</option>
+        {propositoCreditoOptions.map((opt, index) => (
+          <option key={index} value={opt.value}>
+            {opt.label}
+          </option>
+        ))}
       </Field>
       <ErrorMessage
         name="proposito_credito"
@@ -45,12 +68,11 @@ export const Step4 = () => {
         Qual é o seu histórico de crédito?
       </label>
       <Field name="historico_de_credito" as="select">
-        <option value="">Selecione uma opção</option>
-        <option value="A30">Sem crédito/Créditos pagos totalmente</option>
-        <option value="A31">Créditos pagos totalmente nesse banco</option>
-        <option value="A32">Crédito existente pago em dia</option>
-        <option value="A33">Atrasos em pagamentos passados</option>
-        <option value="A34">Conta crítica/Créditos em outros bancos</option>
+        {historicoDeCreditoOptions.map((opt, index) => (
+          <option key={index} value={opt.value}>
+            {opt.label}
+          </option>
+        ))}
       </Field>
       <ErrorMessage
         name="historico_de_credito"
@@ -62,37 +84,17 @@ export const Step4 = () => {
         <fieldset className="radio-group">
           <legend>Você tem outros parcelamentos ativos?</legend>
 
-          <label>
-            <Field
-              type="radio"
-              name="outros_parcelamentos"
-              id="outros_parcelamentos"
-              value="A141"
-            />
-            Bancário
-          </label>
-
-          <label>
-            <Field
-              type="radio"
-              name="outros_parcelamentos"
-              id="outros_parcelamentos"
-              value="A142"
-            />
-            Comércio
-          </label>
-
-          <label>
-            <Field
-              type="radio"
-              name="outros_parcelamentos"
-              id="outros_parcelamentos"
-              value="A143"
-            />
-            Nenhum
-          </label>
+          {outrosParcelamentosOptions.map((opt, index) => (
+            <label key={index}>
+              <Field
+                type="radio"
+                name="outros_parcelamentos"
+                value={opt.value}
+              />
+              {opt.label}
+            </label>
+          ))}
         </fieldset>
-
         <ErrorMessage
           name="outros_parcelamentos"
           component="div"

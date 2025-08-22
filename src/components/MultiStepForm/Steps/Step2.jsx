@@ -1,15 +1,47 @@
 import { Field, ErrorMessage } from 'formik';
 
 export const Step2 = () => {
+  const empregoOptions = [
+    { value: '', label: 'Selecione' },
+    { value: 'A171', label: 'Desempregado sem instrução' },
+    { value: 'A172', label: 'Empregado sem instrução' },
+    { value: 'A173', label: 'Empregado com instrução' },
+    { value: 'A174', label: 'Alto cargo/Autônomo' },
+  ];
+
+  const tempoTrabalhoAtualOptions = [
+    { value: '', label: 'Selecione' },
+    { value: 'A71', label: 'Desempregado' },
+    { value: 'A72', label: '<1 ano' },
+    { value: 'A73', label: '1 ano - 4 anos' },
+    { value: 'A74', label: '4 anos - 7 anos' },
+    { value: 'A75', label: '>7 anos' },
+  ];
+
+  const patrimonioOptions = [
+    { value: '', label: 'Selecione' },
+    { value: 'A121', label: 'Imóveis' },
+    { value: 'A122', label: 'Seguro de vida' },
+    { value: 'A123', label: 'Carro ou outros' },
+    { value: 'A124', label: 'Desconhecido/Nenhum' },
+  ];
+
+  const posseMoradiaOptions = [
+    { value: '', label: 'Selecione' },
+    { value: 'A151', label: 'Aluguel' },
+    { value: 'A152', label: 'Casa própria' },
+    { value: 'A153', label: 'Mora de graça' },
+  ];
+
   return (
     <>
       <label htmlFor="emprego">Qual é sua situação profissional atual?</label>
       <Field name="emprego" as="select">
-        <option value="">Selecione uma opção</option>
-        <option value="A171">Desempregado sem instrução</option>
-        <option value="A172">Empregado sem instrução</option>
-        <option value="A173">Empregado com instrução</option>
-        <option value="A174">Alto cargo/Autônomo</option>
+        {empregoOptions.map((opt, index) => (
+          <option key={index} value={opt.value}>
+            {opt.label}
+          </option>
+        ))}
       </Field>
       <ErrorMessage name="emprego" component="div" className="error" />
 
@@ -17,12 +49,11 @@ export const Step2 = () => {
         Há quanto tempo você está no emprego atual?
       </label>
       <Field name="tempo_trabalho_atual" as="select">
-        <option value="">Selecione uma opção</option>
-        <option value="A71">Desempregado</option>
-        <option value="A72">{'<1 ano'}</option>
-        <option value="A73">1 ano - 4 anos</option>
-        <option value="A74">4 anos - 7 anos</option>
-        <option value="A75">{'>7 anos'}</option>
+        {tempoTrabalhoAtualOptions.map((opt, index) => (
+          <option key={index} value={opt.value}>
+            {opt.label}
+          </option>
+        ))}
       </Field>
       <ErrorMessage
         name="tempo_trabalho_atual"
@@ -34,11 +65,11 @@ export const Step2 = () => {
         Você possui algum dos seguintes patrimônios? *
       </label>
       <Field name="patrimonio" as="select">
-        <option value="">Selecione uma opção</option>
-        <option value="A121">Imóveis</option>
-        <option value="A122">Seguro de vida</option>
-        <option value="A123">Carro ou outros</option>
-        <option value="A124">Desconhecido/Nenhum</option>
+        {patrimonioOptions.map((opt, index) => (
+          <option key={index} value={opt.value}>
+            {opt.label}
+          </option>
+        ))}
       </Field>
       <ErrorMessage name="patrimonio" component="div" className="error" />
 
@@ -59,10 +90,11 @@ export const Step2 = () => {
 
       <label htmlFor="posse_moradia">Qual é a sua situação de moradia?</label>
       <Field name="posse_moradia" as="select">
-        <option value="">Selecione uma opção</option>
-        <option value="A151">Aluguel</option>
-        <option value="A152">Casa própria</option>
-        <option value="A153">Mora de graça</option>
+        {posseMoradiaOptions.map((opt, index) => (
+          <option key={index} value={opt.value}>
+            {opt.label}
+          </option>
+        ))}
       </Field>
       <ErrorMessage name="posse_moradia" component="div" className="error" />
     </>
