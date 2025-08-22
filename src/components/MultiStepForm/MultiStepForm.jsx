@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Formik, Form } from 'formik';
+import { POST_DATA } from '../../api/api.js';
 import { validationSchemas } from '../../schemas/validationSchemas.js';
 import { ProgressBar } from '../ProgressBar';
 import { Step1, Step2, Step3, Step4, Step5 } from './Steps';
@@ -46,11 +47,24 @@ export const MultiStepForm = ({ onFinish }) => {
 
   const handleSubmit = async (values, actions) => {
     if (isLastStep) {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-      onFinish(values);
+      try {
+        const { url, options } = POST_DATA({ values });
+        const response = await fetch(url, options);
+        const results = await response.json();
+
+        if (!response.ok) {
+          throw new Error(results.message || 'Erro ao enviar os dados.');
+        }
+        console.log(results);
+        onFinish(values);
+      } catch (error) {
+        console.error(error.message);
+        alert(error.message);
+      }
     } else {
       setStep(step + 1);
     }
+
     actions.setTouched({});
     actions.setSubmitting(false);
   };
