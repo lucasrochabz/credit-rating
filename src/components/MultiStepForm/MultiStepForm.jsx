@@ -47,7 +47,6 @@ export const MultiStepForm = ({ onFinish }) => {
 
   const handleSubmit = async (values, actions) => {
     if (isLastStep) {
-      console.log(values);
       try {
         const { url, options } = POST_DATA(values);
         const response = await fetch(url, options);
@@ -56,8 +55,7 @@ export const MultiStepForm = ({ onFinish }) => {
         if (!response.ok) {
           throw new Error(results.message || 'Erro ao enviar os dados.');
         }
-        console.log(results);
-        onFinish(results);
+        onFinish(results.classe);
       } catch (error) {
         console.error(error.message);
         alert(error.message);
