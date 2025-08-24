@@ -1,4 +1,4 @@
-## Credit Analysis
+## credit-rating
 
 ### Ferramentas
 
@@ -8,7 +8,7 @@
 ### Estrutura do projeto
 
 ```bash
-credit-analysis/
+credit-rating/
 ├── src/
 │   ├── components/
 │   │   ├── Step1.jsx
