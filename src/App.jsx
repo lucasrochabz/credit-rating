@@ -18,7 +18,7 @@ export const App = () => {
         <Result isApproved={isApproved} />
       ) : (
         <>
-          <h2>Classificação de Risco de Crédito</h2>
+          <h2 className="subtitle">Classificação de Risco de Crédito</h2>
           <MultiStepForm onFinish={handleFinish} />
         </>
       )}

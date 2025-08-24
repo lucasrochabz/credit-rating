@@ -14,10 +14,10 @@
   --black-color: #000000;
 
   /* Fonte */
-  --font-xs: 0.8rem;
+  --font-xs: 0.85rem;
   --font-sm: 1rem;
-  --font-md: 2rem;
-  --font-lg: 3rem;
+  --font-md: 2.25rem;
+  --font-lg: 4rem;
   --font-xl: 5rem;
 }
 
@@ -40,7 +40,7 @@ a {
 
 .container {
   background: var(--white-color);
-  max-width: 600px;
+  max-width: 800px;
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -53,20 +53,22 @@ form {
 }
 
 input, select {
+  font-size: var(--font-sm);
   border: 2px solid var(--gray-color);
   border-radius: 5px;
   padding: 10px;
-  font-size: 1rem;
 }
 
 label, fieldset {
+  font-size: var(--font-sm);
+  font-weight: 500;
   margin-top: 1rem;
 }
 
 fieldset {
-  padding: 10px;
   border: 2px solid var(--gray-color);
   border-radius: 5px;
+  padding: 10px;
 }
 
 legend {
@@ -80,7 +82,7 @@ legend {
 
 .error {
   color: var(--red-color);
-  font-size: 0.85rem;
+  font-size: var(--font-xs);
 }
 
 .progress-container {
@@ -101,8 +103,11 @@ legend {
 button {
   background: var(--green-color);
   color: var(--white-color);
-  border-radius: 5px;
+  font-size: var(--font-sm);
+  font-weight: 600;
+  text-transform: uppercase;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
   padding: 10px 20px;
   margin-top: 2rem;
@@ -115,20 +120,24 @@ button:disabled {
 
 button[type='button'] {
   background-color: transparent;
-  border: 1px solid var(--green-color);
   color: var(--green-color);
+  border: 1px solid var(--green-color);
 }
 
 .buttons {
   display: flex;
-  gap: 1rem;
   justify-content: flex-end;
+  gap: 1rem;
 }
 
 .title {
-
+  color: #262f3f;
+  font-size: var(--font-lg);
+  line-height: 1.1;
 }
 
 .subtitle {
-
+  color: #777;
+  font-size: var(--font-md);
+  line-height: 1.1;
 }
