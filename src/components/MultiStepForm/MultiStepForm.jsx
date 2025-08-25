@@ -53,9 +53,10 @@ export const MultiStepForm = ({ onFinish }) => {
         const results = await response.json();
 
         if (!response.ok) {
-          throw new Error(results.message || 'Erro ao enviar os dados.');
+          throw new Error(results.status || 'Erro ao enviar os dados.');
         }
-        onFinish(results.classe);
+
+        onFinish(results.data);
       } catch (error) {
         console.error(error.message);
         alert(error.message);

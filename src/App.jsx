@@ -6,10 +6,10 @@ export const App = () => {
   const [formSent, setFormSent] = useState(false);
   const [isApproved, setIsAprovado] = useState(null);
 
-  const handleFinish = (values) => {
+  const handleFinish = (data) => {
     setFormSent(true);
 
-    setIsAprovado(values === '0');
+    setIsAprovado(data === '0');
   };
 
   return (
