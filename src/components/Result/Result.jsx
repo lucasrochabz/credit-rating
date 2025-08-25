@@ -1,12 +1,11 @@
 import './Result.css';
 
+const images = import.meta.glob('/src/assets/*', {
+  eager: true,
+});
+
 export const Result = ({ isApproved }) => {
   const status = isApproved ? 'approved' : 'failed';
-
-  const images = import.meta.glob('/src/assets/*', {
-    eager: true,
-  });
-
   const imagePath = images[`/src/assets/${status}.svg`]?.default;
 
   const contentMap = {
