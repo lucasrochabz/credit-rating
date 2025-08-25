@@ -7,11 +7,11 @@
 :root {
   /* Cores */
   --bg-color: #f5f5f5;
-  --green-color: #4caf50;
+  --green-color: #0fd15d;
   --gray-color: #cccccc;
   --red-color: #ff0000;
   --white-color: #ffffff;
-  --black-color: #000000;
+  --dark-color: #262f3f;
 
   /* Fonte */
   --font-xs: 0.85rem;
@@ -23,7 +23,7 @@
 
 body {
   background: var(--bg-color);
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   padding: 2rem;
 }
 
@@ -60,6 +60,7 @@ input, select {
 }
 
 label, fieldset {
+  color: var(--dark-color);
   font-size: var(--font-sm);
   font-weight: 500;
   margin-top: 1rem;
@@ -72,7 +73,8 @@ fieldset {
 }
 
 legend {
-  color: var(--black-color);
+  color: var(--dark-color);
+  font-weight: 500;
 }
 
 .radio-group {
@@ -131,7 +133,7 @@ button[type='button'] {
 }
 
 .title {
-  color: #262f3f;
+  color: var(--dark-color);
   font-size: var(--font-lg);
   line-height: 1.1;
 }
