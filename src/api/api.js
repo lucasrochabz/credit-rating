@@ -2,7 +2,7 @@ import { BASE_API_URL } from '../../config';
 
 const POST_DATA = (body) => {
   return {
-    url: `${BASE_API_URL}/verificar`,
+    url: `${BASE_API_URL}/api/verificar`,
     options: {
       method: 'POST',
       headers: {
