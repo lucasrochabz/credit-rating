@@ -1,27 +1,57 @@
-## credit-rating
+# credit-rating
 
-### Ferramentas
+Este é o frontend desenvolvido em React para consumo da [Credit Rating Api](https://github.com/lucasrochabz/credit-rating-api).
 
-- Formik
-- Yup
+O formulário permite que o usuário insira seus dados financeiros e receba uma resposta da API indicando a classificação de crédito.
+
+## Pré-requisitos
+
+- Node.js 18 ou superior
+- npm (gerenciador de pacotes do Node.js)
+- Git
+
+## Iniciar aplicação
+
+1. Faça uma cópia do arquivo **.env.example**:
+
+```bash
+cp .env.example .env
+```
+
+2. Edite o arquivo **.env** com os valores apropriados para o seu ambiente.
+
+3. Instale as dependências do projeto:
+
+```bash
+npm install
+```
+
+4. Inicie o servidor de desenvolvimento:
+
+```bash
+npm run dev
+```
 
 ### Estrutura do projeto
 
 ```bash
 credit-rating/
 ├── src/
-│   ├── components/
-│   │   ├── Step1.jsx
-│   │   ├── Step2.jsx
-│   │   ├── Step3.jsx
-│   │   ├── Step4.jsx
-│   │   └── ProgressBar.jsx
+│   ├── api/                # Comunicação com a API Flask
+│   ├── assets/             # Imagens e arquivos estáticos
+│   ├── components/         # Componentes reutilizáveis
+│   │   ├── MultiStepForm/
+│   │   ├── ProgressBar/
+│   │   └── Result/
 │   │
+│   ├── schemas             # Schemas de validação (Yup)
 │   ├── App.jsx
 │   ├── index.css
 │   └── main.jsx
 │
+├── .env.example
 ├── .gitignore
+├── config.js
 ├── eslint.config.js
 ├── index.html
 ├── package-lock.json
@@ -29,23 +59,3 @@ credit-rating/
 ├── README.md
 └── vite.config.js
 ```
-
-### Anotações
-
-resultado positivo:
-
-- Pessoa de palavra
-- Pessoa direita
-- Pessoa honrada
-- Esse aí é liso, mas paga direitinho!
-- Fulano não enrola, é certinho com as contas.
-- Ele é homem/mulher de palavra.
-
-resultado negativo:
-
-- Caloteiro
-- Rapaz, não venda fiado pra ele não, que é caloteiro.
-- Ele é mais liso que quiabo, vive devendo.
-- mais liso que Mussum ensaboado.
-- Não paga ninguém vivo.
-- Esse aí é devendo e luxando
