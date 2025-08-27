@@ -9,7 +9,7 @@ export const App = () => {
   const handleFinish = (data) => {
     setFormSent(true);
 
-    setIsAprovado(data === '0');
+    setIsAprovado(data === 0);
   };
 
   return (
