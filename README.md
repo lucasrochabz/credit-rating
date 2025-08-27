@@ -6,19 +6,19 @@ O formulário permite que o usuário insira seus dados financeiros e receba uma 
 
 ## Pré-requisitos
 
-- Node.js 18 ou superior
-- npm (gerenciador de pacotes do Node.js)
-- Git
+- **Node.js** 18 ou superior
+- **npm** (gerenciador de pacotes do Node.js)
+- **Git**
 
 ## Iniciar aplicação
 
-1. Faça uma cópia do arquivo **.env.example**:
+1. Faça uma cópia do arquivo `.env.example`:
 
 ```bash
 cp .env.example .env
 ```
 
-2. Edite o arquivo **.env** com os valores apropriados para o seu ambiente.
+2. Edite o arquivo `.env` com os valores apropriados para o seu ambiente.
 
 3. Instale as dependências do projeto:
 
